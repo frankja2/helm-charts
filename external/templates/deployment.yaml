@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "external.fullname" . }}
+  name: test
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "external.name" . }}
+      app: test
   template:
     metadata:
       labels:
-        app: {{ include "external.name" . }}
+        app: test
     spec:
       containers:
         - name: alpine

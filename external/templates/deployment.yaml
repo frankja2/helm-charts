@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test
+  name: {{ .Release.Name }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: test
+      app: {{ .Release.Name }}
   template:
     metadata:
       labels:
-        app: test
+        app: {{ .Release.Name }}
     spec:
       containers:
         - name: alpine

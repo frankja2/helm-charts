@@ -17,3 +17,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: [ "sleep", "infinity" ]
+          envFrom:
+            - secretRef:
+                name: external-secret
